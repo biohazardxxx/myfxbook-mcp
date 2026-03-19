@@ -1,0 +1,26 @@
+{
+  "mcpb_version": "1.0",
+  "name": "myfxbook-mcp",
+  "version": "1.0.0",
+  "description": "Connect your MyFxBook accounts to Claude to analyze trades and history.",
+  "author": "Alex",
+  "runtime": "node",
+  "main": "build/index.js",
+  "capabilities": {
+    "tools": true,
+    "resources": false
+  },
+  "config": {
+    "MYFXBOOK_EMAIL": {
+      "type": "string",
+      "description": "Your MyFxBook account email",
+      "required": true
+    },
+    "MYFXBOOK_PASSWORD": {
+      "type": "string",
+      "description": "Your MyFxBook account password",
+      "required": true,
+      "secret": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "myfxbook-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for MyFxBook API",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "myfxbook-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.4.1",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
