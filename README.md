@@ -37,6 +37,29 @@ MYFXBOOK_EMAIL=your_email@example.com
 MYFXBOOK_PASSWORD=your_password
 ```
 
+## Testing
+
+Unit/integration tests run against a local fake server that reproduces the real
+MyFxBook contract (including the fact that the API returns the session token
+already percent-encoded).
+
+```bash
+npm test
+npm run test:coverage
+```
+
+Live checks against the real API (require a `.env` with your credentials):
+
+```bash
+node --env-file=.env scripts/live-check.mjs
+node --env-file=.env scripts/e2e-live.mjs
+```
+
+`e2e-live.mjs` drives the built server over stdio exactly like an MCP client.
+
+> **Account IDs:** `get_open_trades` and `get_history` take the `id` field from
+> `get_accounts`, not `accountId`. Both are numbers and they are different.
+
 ## Installation as Claude Desktop Package
 
 This project includes a `manifest.json` which allows it to be bundled as a Claude Desktop installable package (`.mcpb`).
